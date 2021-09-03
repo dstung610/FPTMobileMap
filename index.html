@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" property="og:title" content="Virtual Campus Tour | FPT Software Village 2">
+    <meta name="description" property="og:description" content="Explore one of the largest data centers in Vietnam  F-Ville 2 from your home.Navigate around our campus and its surroundings through this interactive experience">
+    <meta name="image" property="og:image" content="./assets/thumb.jpg">
+    <meta name="url" property="og:url" content="https://campus.fpt-software.com/world/">
+
+    <link rel="icon" type="image/png" href="./assets/favicon.jpg" />
+    <link rel="stylesheet" href="./fptstyle.css" />
+    <script type="text/javascript">
+        if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            // Redirecion on mobile
+            const urlPC = "https://campus.fpt-software.com/world/";
+            // window.location.assign(urlPC);
+        }
+    </script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container-fluid" id="mount">
+        <!-- Top logo -->
+        <!-- <div class="row">
+            <div class='col-2 offset-5'>
+                <img id="fptlogo" src="./assets/fpt-logo.png" />
+            </div>
+        </div> -->
+
+        <!-- Navbar  -->
+        <div class="row myNav justify-content-center gx-1">
+            <div class="col-4 navOption color-blue text-center" @click="navClick(1)">
+                America <span class="arrow" :class="[activeNav !== 1 ? 'hide' : '']"><img src="./assets/arrow.png"/></span>
+            </div>
+            <div class="col-4 navOption color-blue text-center" @click="navClick(2)">
+                Europe <span class="arrow" :class="[activeNav !== 2 ? 'hide' : '']"><img src="./assets/arrow.png"/></span>
+            </div>
+            <div class="col-4 navOption color-blue text-center" @click="navClick(3)">
+                Asia <span class="arrow" :class="[activeNav !== 3 ? 'hide' : '']"><img src="./assets/arrow.png"/></span>
+            </div>
+        </div>
+
+        <!-- Bot Info -->
+        <div id="botInfo" class="content" :class="[activeNav !== 0 ? 'hide' : '']">
+            <div class="flexColumn">
+                <div class='col-6'>
+                    <img id="fptlogo" src="./assets/fpt-logo.png" @click="hrefLink('https://www.fpt-software.com/')" />
+                </div>
+                <div>
+                    <h2 class="color-blue">Global Presence</h2>
+                </div>
+                <div>
+                    <h2 class="color-orange">26</h2>
+                    <h3>Countries & Territories</h3>
+                </div>
+                <div>
+                    <h2 class="color-orange">57 </h2>
+                    <h3>Offices</h3>
+                </div>
+                <div>
+                    <h2 class="color-orange">22 </h2>
+                    <h3>Development Centers</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main content -->
+        <div class="content row">
+            <div id="AsiaGroup" :class="[activeNav !== 3 ? 'hide' : '']">
+                <div>
+                    <h3 class="country color-orange" id='Vietnam' @click="clickCountry('Vietnam')">Vietnam (Headquarter)</h3>
+                </div>
+                <div class="flexRow">
+                    <div class="flexColumn SubGroup col-6" id="AsiaSubGroup1">
+                        <p class="country" @click="clickCountry('Australia')">Australia</p>
+                        <p class="country" @click="clickCountry('China')">China</p>
+                        <p class="country" @click="clickCountry('Hongkong')">Hongkong</p>
+                        <p class="country" @click="clickCountry('India')">India</p>
+                        <p class="country" @click="clickCountry('Indonesia')">Indonesia</p>
+                        <p class="country" id='JP' @click="clickCountry('Japan')">Japan</p>
+                        <p class="country" @click="clickCountry('Malaysia')">Malaysia</p>
+                    </div>
+                    <div class="flexColumn SubGroup col-6" id="AsiaSubGroup2">
+                        <p class="country" @click="clickCountry('Myanmar')">Myanmar</p>
+                        <p class="country" @click="clickCountry('Philippines')">Philippines</p>
+                        <p class="country" @click="clickCountry('Singapore')">Singapore</p>
+                        <p class="country" @click="clickCountry('South Korea')">South Korea</p>
+                        <p class="country" @click="clickCountry('Taiwan')">Taiwan</p>
+                        <p class="country" @click="clickCountry('Thailand')">Thailand</p>
+                        <p class="country" @click="clickCountry('UAE')">UAE</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="EuropeGroup" :class="[activeNav !== 2 ? 'hide' : '']">
+                <div class="flexRow">
+                    <div class="flexColumn SubGroup col-6" id="EuropeSubGroup1">
+                        <p class="country" @click="clickCountry('Germany')">Germany</p>
+                        <p class="country" @click="clickCountry('France')">France</p>
+                        <p class="country" @click="clickCountry('Slovakia')">Slovakia</p>
+                    </div>
+                    <div class="flexColumn SubGroup col-6" id="EuropeSubGroup2">
+                        <p class="country" @click="clickCountry('Czech Republic')">Czech Republic</p>
+                        <p class="country" @click="clickCountry('UK')">United Kingdom</p>
+                        <p class="country" @click="clickCountry('Belgium')">Belgium</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="AmericaGroup" :class="[activeNav !== 1 ? 'hide' : '']">
+                <div class="flexRow">
+                    <div class="flexColumn SubGroup col-6">
+                        <p class="country" @click="clickCountry('USA')">USA</p>
+                        <p class="country" @click="clickCountry('Canada')">Canada</p>
+                    </div>
+                    <div class="flexColumn SubGroup col-6">
+                        <p class="country" @click="clickCountry('Colombia')">Colombia</p>
+                        <p class="country" @click="clickCountry('Costa Rica')">Costa Rica</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Background map -->
+        <div id="backgroundMap">
+        </div>
+        <!-- Level 1 brief -->
+        <div class="content row" id="brief1" :class="{hide: !briefShow}">
+
+        </div>
+
+        <!-- Level 2 details -->
+        <div class="content row">
+
+        </div>
+
+        <!-- Level 2 brief -->
+        <div class="content row" id="brief2">
+
+        </div>
+
+        <!-- Video player -->
+        <div id="player">
+        </div>
+        <span id="backButton" class="UI" :class="{hide: !isBackButtonShow}" @click="backToWorld()"><img src="./assets/crosshair.png"/></span>
+        <span id="skipVideoButton" class="UI" :class="{hide: !isVideoShowing}" @click="dismissVideo()"><img src="./assets/crosshair.png"/></span>
+        <div class="loader" :class="{hide: !isLoading}"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.4"></script>
+    <script src="https://player.dacast.com/js/player.js?contentId=1552_f_297509"></script>
+    <script>
+        const vm = Vue.createApp({
+            data() {
+                return {
+                    activeNav: 0,
+                    briefShow: false,
+                    isLoading: false,
+                    isVideoShowing: false,
+                    isBackButtonShow: false,
+
+                }
+            },
+            methods: {
+                navClick(id) {
+                    this.briefShow = false;
+                    document.getElementById('brief1').innerHTML = "";
+                    if (this.activeNav === id) {
+                        this.activeNav = 0;
+                    } else {
+                        this.activeNav = id;
+                    }
+                },
+                clickCountry(country) {
+                    if (country === "Vietnam" || country === "Japan") {
+                        this.activateLevel2(country);
+                        return;
+                    } else {
+                        this.activateLevel1(country);
+                    }
+
+                },
+                activateLevel1(country) {
+                    var newData = "";
+                    // newData += "<span id='dismissButton' onClick='tooltipDimiss()''><img src='./assets/crosshair.png'/></span>";
+                    newData += "<h2 class='color-orange'>" + country + "</h2>";
+                    console.log(country);
+                    console.log(tooltipData[country]);
+                    for (const [city, address] of Object.entries(tooltipData[country])) {
+                        newData += "<p>" + city + ":<br>" + address + "</p>";
+                    }
+                    console.log(newData);
+                    document.getElementById('brief1').innerHTML = newData;
+
+                    this.briefShow = true;
+                },
+                activateLevel2(country) {
+                    if (country === "Vietnam" || country === "Japan") {
+                        this.activateLevel2PreContent(country);
+                        return;
+                    } else {}
+                },
+                activateLevel2PreContent(country) {
+                    var urlvideoid = ""
+                    switch (country) {
+                        case "Vietnam":
+                            // Clip Vietnam-EN
+                            urlvideoid = "892d9d31-3f67-5474-677d-0cf3aba33262-vod-eb433728-d63b-9782-9f48-12aedda1b4f1";
+                            break;
+                        case "Japan":
+                            // Clip Japan-JP
+                            urlvideoid = "892d9d31-3f67-5474-677d-0cf3aba33262-vod-74faef9b-2954-3154-d485-333a837e6c82";
+                            break;
+                        default:
+                            urlvideoid = "";
+                            break;
+                    }
+
+                    this.isVideoShowing = true;
+                    this.countryCurrentVideo = country;
+                    this.isLoading = true;
+                    if (urlvideoid !== "") {
+                        // initializeYtPlayer(urlvideoid);
+                        initVideo(urlvideoid);
+                    }
+                },
+                dismissVideo() {
+                    this.isVideoShowing = false;
+                    this.isLoading = false;
+                    stopCurrentVideo();
+                    this.activateCountry(this.countryCurrentVideo);
+                },
+                openTour() {
+                    // linkToTour(this.tourSrc);
+                    alert("openTour");
+                },
+                hrefLink(link) {
+                    // window.open(link);
+                    window.location = link;
+                }
+            },
+            computed: {
+
+            }
+        }).mount("#mount")
+
+        // Video API
+        var currentVidId = "";
+        var vidPlayer
+
+        function initVideo(CONTENT_ID) {
+            currentVidId = CONTENT_ID;
+            if (CONTENT_ID === "") return;
+            vidPlayer = dacast(CONTENT_ID, 'player', {
+                width: window.screen.width * 0.8,
+                height: window.screen.height / 2
+            });
+        };
+
+        function stopCurrentVideo() {
+            console.log("stop video");
+            vidPlayer.stop();
+            vidPlayer.dispose();
+        }
+
+        const tooltipData = {
+            "Vietnam": {
+                "Hanoi": {
+                    "FPT Software": "17 Duy Tân, Cầu Giấy, Hà Nội",
+                    "FPT Software": "FPT Tower, Lot D28, Cau Giay New Urban Area, Dich Vong Ward, Cau Giay District, Hanoi City, Vietnam Tel: +84 24 7300 7300<br>Fax: +84 24 37687410",
+                    "FPT Software Hanoi": "Làng công nghệ số 3 và số 4, Khu phần mềm, khu Công nghệ cao Hòa Lạc, Km 29 Đại Lộ Thăng Long, Xã Tân Xã, Huyện Thạch Thất, Hà Nội"
+                },
+                "Ho Chi Minh": {
+                    "FPT Software Hochiminh": "Lô T2, đường D1, khu công nghệ cao, Phường Tân Phú, Quận 9, Thành phố Hồ Chí Minh"
+                },
+                "Da Nang": {
+                    "Công ty TNHH Dịch vụ xử lý số FPT FPT Digital Processing Service Company Limited": "Tòa nhà FPT, KCN Đà Nẵng, An Đồn, Phường An Hải Bắc, Quận Sơn Trà, Thành phố Đà Nẵng, Việt Nam FPT Building, Road No.1, Danang Industrial Zone An Don, An Hai Bac ward, Son Tra District, Da Nang City"
+                },
+                "Quy Nhon": {
+                    "Chi nhánh công ty TNHH Dịch vụ xử lý số FPT tại Quy Nhơn FPT Digital Processing Service Company Limited - Quy Nhon branch": "Lầu 8, Tòa nhà 47, số 8 đường Biên Cương, phường Ngô Mây, thành phố Quy Nhơn, tỉnh Bình Định, Việt Nam"
+                },
+                "Can Tho": {
+                    "Chi nhánh Công ty TNHH Phần mềm FPT Hồ Chí Minh tại Cần Thơ FPT SOFTWARE HOCHIMINH CO.,LTD-CAN THO BRANCH": "Số 600 đường Nguyễn Văn Cừ, Phường An Bình, Quận Ninh Kiều, Thành Phố Cần Thơ No. 600 Nguyen Van Cu Street, An Binh Ward, Ninh Kieu District, Can Tho City"
+                }
+            },
+            "Japan": {
+                "Tokyo": {
+                    "Tokyo Office 6th Floor, KDX Hamamatsucho Place, Hamamatsu-cho, Shiba Park 1-7-6, Minato-ku, Tokyo": "Tel.: +81-(3)-6634-6868<br>Fax: +81-(3)-6634-6869"
+                },
+                "Sapporo": {
+                    "Sapporo Office Sapporo Tokeidai Bld 7F, Kita 1 Jou Nishi 2-1, Chuo-ku, Sapporo-shi, Hokkaido, 060-0001 Japan": "Tel.: +81-(11)-233-1266<br>Fax: +81-(11)-223-1267"
+                },
+                "Shizuoka": {
+                    "Shizuoka Office Daiju Seimei Hamamatsu Bld 6F, Tokiwa-cho 145-1, Naka-ku, Hamamatsu-shi, Shizuoka, 430-0917 Japan ": "Tel.: +81-(53)-451-7038<br>Fax: +81-(53)-451-7039<br>Email: fjp.contact@fsoft.com.vn"
+                },
+                "Osaka": {
+                    "Osaka Office Shinfujita Bld 16F, Dojima 2-4-27, Kita-ku Osaka-shi, Osaka-fu, 530-0003 Japan": "Tel.: +81-(6)-6344-9010<br>Fax: +81-(6)-6344-9020"
+                },
+                "Yokohama": {
+                    "Yokohama Office Pacific Marks Yokohama East 6F, Sakaecho 3-12, Kanagawa-ku, Yokohama-shi, Kanagawa-ken, 221-0052 Japan": "Tel.: +81-(45)-440-3738<br>Fax: +81-(45)-440-3739"
+                },
+                "Aichi (Kariya Development Center)": {
+                    "Kariya Development Center THE TERRACE 4F, Aio-Cho 1-28, Kariya-shi, Aichi-ken, 448-0027 Japan": "Tel.: +81-(566)-63-6028<br>Fax: +81-(566)-63-6029"
+                },
+                "Hiroshima": {
+                    "Hiroshima Office Sankyo Hiroshima Bld 7F, Naka-ku, Komachi 3-25, Hiroshima-shi, Hiroshima-ken, 730-0041 Japan": "Tel.: +81-(82)-545-9806 <br>Fax: +81-(82)-545-9808"
+                },
+                "Fukuoka-shi, Fukuoka": {
+                    "Fukuoka Office Hanamura Bld 8F, Hakata Eki Higashi 1-12-6, Hakata-ku, Fukuoka 812-0013 Japan": "Tel.: + 81-(92)-452-9911 <br>Fax: + 81-(92)-452-9912"
+                },
+                "Okinawa": {
+                    "FPT Okinawa R&D Center JEI Naha Bld.6F, Kumoji 2-8-1, Naha-shi, Okinawa-ken, 900-0015 Japan": "Tel.: +81-(98)-861-7311 <br>Fax: +81-(98)-861-7313"
+                },
+                "Toyota Development Center": {
+                    "Toyota Grand Bld 2F, Wakamiya-cho 2-66, Toyota-shi, Aichi-ken, 471-0026 Japan": "Tel.: +81-(565)-37-3584 <br>Fax: +81-(565)-37-3585"
+                },
+                "Nagoya Office": {
+                    "TOMITA-BLD 7F, Ushijima-cho, Nishi-ku, Nagoya-shi, Aichi pref. 451-0046": "Tel.: +81-(52)-756-3456 <br>Fax: +81-(52)-756-3457"
+                },
+                "Email Support": {
+                    "Support.Japan@fpt-software.com": ""
+                }
+            },
+            "Australia": {
+                "Sydney": "Office Level 13, 2 Park Street, Sydney NSW 2000, Australia <br>Contact: <br>Phone: +61 2 9004 7160 <br>Phone: +61 2 9004 7070 <br>Contact person: Ms. Ha Trinh <br>Email: Support.Australia@fpt-software.com",
+                "Melbourne": "Melbourne Office Level 27, Rialto South Tower, 525 Collins Street, Melbourne, Victoria, 3000, Australia",
+                "Perth": "Perth Office Level 32, 152 St. Georges Terrace, Perth WA 6000, Australia"
+            },
+            "China": {
+                "Shanghai": "Room 1615,16th Floor, Building 1, Global Creative Center, Lane 166, Minhong Road, Shanghai, P.R., China<br>Tel: +86 (21) 5416 2767 <br>Contact: Ms. Lily Tran Thi Hue <br>Email: Support.China@fpt-software.com"
+            },
+            "Czech Republic": {
+                "Strašnice": "Fpt Czech S.R.O. Limuzská 3135/12, 108 00 Strašnice, Czech Republic <br>Contact Person: Mr. Antonin Pavelka <br>Email: fsvk.contact@fpt.sk"
+            },
+            "France": {
+                "Paris": "FPT Software Europe SARL Paris office: 8 Terrasse Bellini, 92800 Puteaux, France <br>Tel: +33 018 0874 812 <br>Contact Person: <br>Mr. Modolo Jérome - Chief Executive Officer Email: Support.France @fpt-software.com",
+                "Toulouse": "Toulouse office: Aeropole, Bat 1, 5 Avenue Albert Durand, 31700 Blagnac, France <br>Tel: +33 056 150 0437 <br>Contact Person: <br>Mr. Modolo Jérome - Chief Executive Officer Email: Support.France @fpt-software.com"
+            },
+            "Germany": {
+                "Essen": "6th Floor, Am Thyssenhaus 1-3 (Haus3), 45128 Essen, Germany <br>Tel: +49 201 49039350 <br>Fax: +49 201 8675296 <br>Contact Person: Mr. Le Hai - Chief Executive Officer <br>Email: Support.Germany@fpt-software.com"
+            },
+            "Hongkong": {
+                "Hongkong": "FPT Consulting Service Limited. Room 1318-20, Hollywood Plaza, 610 Nathan Road, Mongkok, Kowloon, Hong Kong <br>Contact person: Mr. Nguyen Hoang Trung  - Director <br>Email: TrungNH@fsoft.com.vn Support.China@fpt-software.com"
+            },
+            "India": {
+                "Hyderabad": "FPT India Private Limited Address: 1st floor ASR CREST, Plot No.42&43, Image Garden Road, Madhapur, Hyderabad - 500081, India <br>Tel.: (091) 916-047-7345 <br>Contact person: Phung Sy Bay - Director <br>Email: support@fpt-software.com"
+            },
+            "Indonesia": {
+                "Jakarta": "Sovereign Plaza 6th Floor Jl. TB Simatupang Kav. 36, Jakarta 12430 <br>Tel.:(021)2940-0239 <br>Fax: (021) 2940-0238 <br>Tel.: (021) 2940-0239 Fax: (021) 2940-0238 Contact person: <br>Mr. Quach Hai Son Managing Director <br>Email: support@fpt-software.com"
+            },
+            "Malaysia": {
+                "Kuala Lumpur": "Lot 19 – 01, Level 19 Menara Hapseng 2, 02, Jalan P. Ramlee, 50250 Kuala Lumpur, Malaysia. <br>Tel.: +603 – 2022 0333<br>Fax: +603 – 2022 0303 Contact Persons: Mr. Tran Hong Chung Managing Director Email: Support.Malaysia@fpt-software.com"
+            },
+            "Myanmar": {
+                "Yangon": "E02-03, 2nd floor, Tower 5, Diamond Tower, Pyay Road, Kamayut Township, Yangon, Myanmar <br>Tel.: (+95) 9685 1111 32 <br>Contact Persons: Mr. Dinh Ngoc Hoang - Director",
+                "Yangon": "603, 605, 16 Building, MICT Park, Hlaing University, Hlaing Township, Yangon Tel: +95 1 9339 230"
+            },
+            "Philippines": {
+                "Cebu City": "G/F eBloc Tower 3, Geonzon St., Cebu IT Park, Apas, Cebu City, 6000 <br>Mr. Ralf Jay D. Mosqueda - Managing Director <br>Tel: +63 32 410 6957/ +63 32 410 6858 <br>Support.USA@fpt-software.com",
+                "Cebu City": "9th floor, HM Tower, Geonzon Street, IT Park, Cebu City 6000",
+                "Manila": "Suite A, Level 14, Robinsons Summit Center, 6783 Ayala Avenue, Makati City 1226 <br>Tel: +63 32 410 6857 (58)"
+            },
+            "Singapore": {
+                "Singapore": "8 Kallang Avenue, 12-09 Aperia Tower 1, Singapore 339509 <br>Tel: +65 6338 4353 <br>Fax: +65 6338 1987 <br>Contact person: Mr. David Nguyen Managing Director <br>Email: Support.Singapore@fpt-software.com"
+            },
+            "Slovakia": {
+                "Slovakia": "FPT Slovakia S.R.O Južná trieda 6, Košice 040 01, Slovakia <br>Tel: +42 155 610 1600 <br>Fax: +42 155 610 4005 <br>Contact person: Tran Coi - Director <br>Email: fsvk.contact@fpt.sk"
+            },
+            "South Korea": {
+                "Seoul": "Siencestar R.1001, 42 Magokjungang6ro, Gangseo-gu, Seoul, Korea <br>Tel.: +82 2 567 6650 <br>Fax: +82 2 3663 6650 <br>Contact person:  Mr. Nguyen Quoc Hung Chief Executive Officer <br>Email: support.korea@fpt-software.com"
+            },
+            "Taiwan": {
+                "Taipei": "FPT Taiwan Co., Ltd 9F-4,No.149-49 Keelung Road, Sec.2, Xinyi District, Taipei, Taiwan 11054, R.O.C <br>Tel: +886 93 613 7693 <br>Mr. Ted Chiang General Manager <br>Email: Ted.Chiang@fsoft.com.vn"
+            },
+            "Thailand": {
+                "Bangkok": "35th Floor, Tower A, The Ninth Tower, 33/4, Rama 9 Road, Huaykwang District, Bangkok <br>Tel.: +66 91 827 9252 <br>Contact Persons: Mr. Nguyen Tri Thai Managing Director <br>Email: Support.Thai@fpt-software.com"
+            },
+            "Belgium": {
+                "Mechelen": "FPT Belgium Office Schaliënhoevedreef 20h 2800 Mechelen, Belgium <br>Contact point: Mr. Le Hai  Chief Executive Officer <br>Email: hailh@fsoft.com.vn"
+            },
+            "UAE": {
+                "UAE": "FPT UAE Office 1405, Fortune Tower, Jumeirah Lakes Towers, Dubai, UAE <br>Contact person: Mr. Harry Nguyen Thanh Tuan Managing Director <br>Tel: +971 (04) 5776725 | Mobile: +971 5450 33668 <br>Email: Support.Me@fpt-software.com"
+            },
+            "UK": {
+                "London": "London St Pauls, 16 St Martin’s Le Grand, St Paul’s, London, The United Kingdom FPT Software United Kingdom Ltd. <br>Contact Person: Mr. Mohan Naidu - Managing Director <br>Tel: 02045098064 <br>Email: Support.UK@fpt-software.com"
+            },
+            "USA": {
+                "Texas": "FPT USA Headquarters 801 East Campbell Rd., Suite 525, Richardson, Texas 75081, USA <br>Tel: +1 214 253 2662 <br>Fax: +1 214 253 2988 <br>Contact person: Mr. Dang Tran Phuong Chief Executive Officer <br>Email: Support.USA@fpt-software.com",
+                "Denver": "Denver Office 6 Inverness Court East, Suite 250, Englewood, CO 80112 <br>Tel: +1 303 708 1575 <br>Email: Support.USA@fpt-software.com",
+                "LA": "Los Angeles Office 801 Parkview Drive North, Ste#100, El Segundo, CA 90245, USA <br>Tel: +1 424 336 9888 <br>Email: Support.USA@fpt-software.com",
+                "Boston": "Boston Office 197 First Ave, Suite 200, Needham, MA 02494 <br>Tel: +1 860 677 4427<br>Email: Support.USA@fpt-software.com",
+                "Hartford": "Hartford Office 10 Stanford Drive, Farmington, CT 06032 <br>Tel: +1 860 677 4427<br>Email: Support.USA@fpt-software.com",
+                "Detroit": "Detroit Office 17197 N Laurel Park Dr #273, Livonia, MI 48152 <br>Email: Support.USA@fpt-software.com",
+                "Renton": "Renton Office 901 Powell Avenue SW, Suite 111, Renton, WA 98057 <br>Tel: + 1 650 931 7246 <br>Email: Support.USA@fpt-software.com",
+                "Atlanta": "Atlanta 2 Concourse Parkway, Suite 100, Atlanta, GA 30328 <br>Tel: +1 404 442 8000 <br>Email: Support.USA@fpt-software.com",
+                "Raleigh": "Raleigh Office 2530 Meridian Parkway, Durham, NC 27713 <br>Tel: +1 919 806 4237 <br>Email: Support.USA@fpt-software.com"
+            },
+            "Colombia": {
+                "Colombia": "Contact person: Mr. Dang Tran Phuong Chief Executive Officer <br>Email: Support.USA@fpt-software.com"
+            },
+            "Canada": {
+                "Boucherville": "FPT Canada Office 242 Rue de Bayeux, Boucherville, QC J4B 7T9, Canada <br>Tel: +1 514 566 5658 <br>Fax: +1 450 641 3325 <br>Contact person: Mr. Dang Tran Phuong Chief Executive Officer<br>Email: Support.Canada@fpt-software.com"
+            },
+            "Costa Rica": {
+                "San José": "Updating"
+            }
+        };
+    </script>
+</body>
+
+</html>
