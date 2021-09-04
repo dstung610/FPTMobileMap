@@ -23,7 +23,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    z-index: -1;
+    z-index: -2;
 }
 
 .color-orange {
@@ -97,13 +97,29 @@ body {
     flex-direction: column;
 }
 
-#brief1 {
+#brief {
+    position: relative;
     background-color: #2E5694;
     border-radius: 25px;
 }
 
-#brief1 p {
+#brief p {
     color: white;
+}
+
+#dismissButton {
+    position: absolute;
+    top: 2vh;
+    right: 2vh;
+    width: auto!important;
+}
+
+#dismissButton:hover {
+    cursor: pointer;
+}
+
+#dismissButton img {
+    width: 20px;
 }
 
 #player {
@@ -116,7 +132,7 @@ body {
 #skipVideoButton {
     position: absolute;
     right: 10px;
-    top: 30%;
+    top: 25vh;
 }
 
 #skipVideoButton:hover,
@@ -127,6 +143,14 @@ body {
 #skipVideoButton img,
 #backButton img {
     width: 20px;
+}
+
+.openTour {
+    background-color: #FE7C40;
+    border-radius: 10px;
+    color: white;
+    padding: 10px 5px;
+    text-align: center;
 }
 
 .loader {
@@ -142,6 +166,7 @@ body {
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    z-index: -1;
 }
 
 @keyframes spin {

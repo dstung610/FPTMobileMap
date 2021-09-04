@@ -72,7 +72,7 @@
         </div>
 
         <!-- Main content -->
-        <div class="content row">
+        <div class="content row" :class="{hide: isLevel2}">
             <div id="AsiaGroup" :class="[activeNav !== 3 ? 'hide' : '']">
                 <div>
                     <h3 class="country color-orange" id='Vietnam' @click="clickCountry('Vietnam')">Vietnam (Headquarter)</h3>
@@ -132,24 +132,57 @@
         <!-- Background map -->
         <div id="backgroundMap">
         </div>
-        <!-- Level 1 brief -->
-        <div class="content row" id="brief1" :class="{hide: !briefShow}">
-
-        </div>
+        <span id="dismissBrief" class="hide" @click="dismissBrief()"><img src="./assets/crosshair.png"/></span>
 
         <!-- Level 2 details -->
-        <div class="content row">
+        <div class="content row" :class="{hide: !isLevel2}">
+            <div id="VietnamGroup" :class="{hide: !isVietnam}">
+                <div>
+                    <h2>Vietnam</h2>
+                </div>
+                <div class="flexRow">
+                    <div class="flexColumn SubGroup col-6">
+                        <p class="country" @click="clickCity('Vietnam', 'Hanoi')">Hanoi</p>
+                        <p class="country hide" id="hanoi" @click="openTour('Hanoi')">Hanoi</p>
+                        <p class="country" @click="clickCity('Vietnam', 'Da Nang')">Da Nang</p>
+                        <p class="country" @click="clickCity('Vietnam', 'Quy Nhon')">Quy Nhon</p>
+                    </div>
+                    <div class="flexColumn SubGroup col-6">
+                        <p class="country" @click="clickCity('Vietnam', 'Ho Chi Minh')">Ho Chi Minh</p>
+                        <p class="country" @click="clickCity('Vietnam', 'Can Tho')">Can Tho</p>
+                    </div>
+                </div>
+            </div>
+            <div id="JapanGroup" :class="{hide: !isJapan}">
+                <div>
+                    <h2>Japan</h2>
+                </div>
+                <div class="flexRow">
+                    <div class="flexColumn SubGroup col-6">
+                        <p class="country" @click="clickCity('Japan', 'Hiroshima')">Hiroshima</p>
+                        <p class="country" @click="clickCity('Japan', 'Fukuoka-shi, Fukuoka')">Fukuoka-shi, Fukuoka</p>
+                        <p class="country" @click="clickCity('Japan', 'Okinawa')">Okinawa</p>
+                        <p class="country" @click="clickCity('Japan', 'Toyota Development Center')">Toyota Development Center</p>
+                        <p class="country" @click="clickCity('Japan', 'Nagoya Office')">Nagoya Office</p>
 
+                    </div>
+                    <div class="flexColumn SubGroup col-6">
+                        <p class="country" @click="clickCity('Japan', 'Tokyo')">Tokyo</p>
+                        <p class="country" @click="clickCity('Japan', 'Sapporo')">Sapporo</p>
+                        <p class="country" @click="clickCity('Japan', 'Shizuoka')">Shizuoka</p>
+                        <p class="country" @click="clickCity('Japan', 'Osaka')">Osaka</p>
+                        <p class="country" @click="clickCity('Japan', 'Yokohama')">Yokohama</p>
+                        <p class="country" @click="clickCity('Japan', 'Aichi (Kariya Development Center)')">Aichi (Kariya Development Center)</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- Level 2 brief -->
-        <div class="content row" id="brief2">
-
-        </div>
+        <!-- Brief -->
+        <div class="content row" id="brief" :class="{hide: !briefShow}"></div>
 
         <!-- Video player -->
-        <div id="player">
-        </div>
+        <div id="player" :class="{hide: !isVideoShowing}"></div>
         <span id="backButton" class="UI" :class="{hide: !isBackButtonShow}" @click="backToWorld()"><img src="./assets/crosshair.png"/></span>
         <span id="skipVideoButton" class="UI" :class="{hide: !isVideoShowing}" @click="dismissVideo()"><img src="./assets/crosshair.png"/></span>
         <div class="loader" :class="{hide: !isLoading}"></div>
@@ -166,13 +199,17 @@
                     isLoading: false,
                     isVideoShowing: false,
                     isBackButtonShow: false,
-
+                    countryCurrentVideo: "",
+                    isLevel2: false,
+                    isVietnam: false,
+                    isJapan: false,
+                    tourSrc: "https://campus.fpt-software.com/en/"
                 }
             },
             methods: {
                 navClick(id) {
-                    this.briefShow = false;
-                    document.getElementById('brief1').innerHTML = "";
+                    this.dismissBrief();
+                    this.setStateToLevel1();
                     if (this.activeNav === id) {
                         this.activeNav = 0;
                     } else {
@@ -188,9 +225,13 @@
                     }
 
                 },
+                dismissBrief() {
+                    this.briefShow = false;
+                    document.getElementById('brief').innerHTML = "";
+                },
                 activateLevel1(country) {
                     var newData = "";
-                    // newData += "<span id='dismissButton' onClick='tooltipDimiss()''><img src='./assets/crosshair.png'/></span>";
+                    newData += "<span id='dismissButton' onClick='tooltipDismiss()''><img src='./assets/crosshair.png'/></span>";
                     newData += "<h2 class='color-orange'>" + country + "</h2>";
                     console.log(country);
                     console.log(tooltipData[country]);
@@ -198,7 +239,7 @@
                         newData += "<p>" + city + ":<br>" + address + "</p>";
                     }
                     console.log(newData);
-                    document.getElementById('brief1').innerHTML = newData;
+                    document.getElementById('brief').innerHTML = newData;
 
                     this.briefShow = true;
                 },
@@ -209,6 +250,7 @@
                     } else {}
                 },
                 activateLevel2PreContent(country) {
+                    this.dismissBrief();
                     var urlvideoid = ""
                     switch (country) {
                         case "Vietnam":
@@ -227,20 +269,51 @@
                     this.isVideoShowing = true;
                     this.countryCurrentVideo = country;
                     this.isLoading = true;
+                    this.activeNav = -1;
                     if (urlvideoid !== "") {
-                        // initializeYtPlayer(urlvideoid);
                         initVideo(urlvideoid);
                     }
+                },
+                activateLevel2Content(country) {
+                    this.isLevel2 = true;
+                    switch (country) {
+                        case "Vietnam":
+                            this.isVietnam = true;
+                            break;
+                        case "Japan":
+                            this.isJapan = true;
+                            break;
+                        default:
+                            break;
+                    }
+                },
+                clickCity(country, city) {
+                    var newData = "";
+                    newData += "<span id='dismissButton' onClick='tooltipDismiss()''><img src='./assets/crosshair.png'/></span>";
+                    newData += "<h2 class='color-orange'>" + city + "</h2>";
+                    console.log(city);
+
+                    for (const [cityName, address] of Object.entries(tooltipData[country][city])) {
+                        newData += "<p>" + cityName + ":<br>" + address + "</p>";
+                    }
+                    console.log(newData);
+                    document.getElementById('brief').innerHTML = newData;
+
+                    this.briefShow = true;
+                },
+                setStateToLevel1() {
+                    this.isVietnam = false;
+                    this.isJapan = false;
+                    this.isLevel2 = false;
                 },
                 dismissVideo() {
                     this.isVideoShowing = false;
                     this.isLoading = false;
                     stopCurrentVideo();
-                    this.activateCountry(this.countryCurrentVideo);
+                    this.activateLevel2Content(this.countryCurrentVideo);
                 },
-                openTour() {
-                    // linkToTour(this.tourSrc);
-                    alert("openTour");
+                openTour(city) {
+                    linkToTour(this.tourSrc);
                 },
                 hrefLink(link) {
                     // window.open(link);
@@ -252,6 +325,19 @@
             }
         }).mount("#mount")
 
+
+        function tooltipDismiss() {
+            document.getElementById('dismissBrief').click();
+        };
+
+        function clickTour(city) {
+            document.getElementById('hanoi').click();
+        }
+
+        function linkToTour(link) {
+            parent.window.location = link;
+        }
+
         // Video API
         var currentVidId = "";
         var vidPlayer
@@ -260,23 +346,29 @@
             currentVidId = CONTENT_ID;
             if (CONTENT_ID === "") return;
             vidPlayer = dacast(CONTENT_ID, 'player', {
-                width: window.screen.width * 0.8,
+                width: window.screen.width,
                 height: window.screen.height / 2
             });
         };
 
         function stopCurrentVideo() {
             console.log("stop video");
-            vidPlayer.stop();
-            vidPlayer.dispose();
+            try {
+                vidPlayer.stop();
+                vidPlayer.dispose();
+            } catch (e) {
+                console.log(e)
+            }
+
         }
 
         const tooltipData = {
             "Vietnam": {
                 "Hanoi": {
                     "FPT Software": "17 Duy Tân, Cầu Giấy, Hà Nội",
-                    "FPT Software": "FPT Tower, Lot D28, Cau Giay New Urban Area, Dich Vong Ward, Cau Giay District, Hanoi City, Vietnam Tel: +84 24 7300 7300<br>Fax: +84 24 37687410",
-                    "FPT Software Hanoi": "Làng công nghệ số 3 và số 4, Khu phần mềm, khu Công nghệ cao Hòa Lạc, Km 29 Đại Lộ Thăng Long, Xã Tân Xã, Huyện Thạch Thất, Hà Nội"
+                    "FPT Software": "FPT Tower, Lot D28, Cau Giay New Urban Area, Dich Vong Ward, Cau Giay District, Hanoi City, Vietnam<br>Tel: +84 24 7300 7300<br>Fax: +84 24 37687410",
+                    "FPT Software Hanoi": "Làng công nghệ số 3 và số 4, Khu phần mềm, khu Công nghệ cao Hòa Lạc, Km 29 Đại Lộ Thăng Long, Xã Tân Xã, Huyện Thạch Thất, Hà Nội",
+                    "<div class='openTour' onClick='clickTour(`Hanoi`)'>Open Tour</div>": " "
                 },
                 "Ho Chi Minh": {
                     "FPT Software Hochiminh": "Lô T2, đường D1, khu công nghệ cao, Phường Tân Phú, Quận 9, Thành phố Hồ Chí Minh"
