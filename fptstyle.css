@@ -149,7 +149,7 @@ body {
     width: 40px;
 }
 
-.openTour {
+.openAction {
     background-color: #FE7C40;
     border-radius: 10px;
     color: white;
@@ -199,7 +199,7 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: aquamarine;
+    background-color: grey;
     border: 1px solid grey;
     margin: 0 2px;
 }
