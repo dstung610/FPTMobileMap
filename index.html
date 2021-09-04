@@ -15,8 +15,8 @@
     <script type="text/javascript">
         if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             // Redirecion on mobile
-            const urlPC = "https://campus.fpt-software.com/world/";
-            // window.location.assign(urlPC);
+            const urlPC = "https://campus.fpt-software.com/world/en";
+            window.location.assign(urlPC);
         }
     </script>
     <!-- CSS only -->
@@ -33,6 +33,15 @@
                 <img id="fptlogo" src="./assets/fpt-logo.png" />
             </div>
         </div> -->
+
+        <!-- Language Switch -->
+        <div class="language">
+            <div class="flexRow">
+                <div id="flag-vn" class='flag' title="Vietnamese" @click="hrefLink('/world/en')"></div>
+                <div id='flag-jp' class='flag' title="Japanese" @click="hrefLink('/world/jp')"></div>
+            </div>
+        </div>
+
 
         <!-- Navbar  -->
         <div class="row myNav justify-content-center gx-1">

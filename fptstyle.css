@@ -59,7 +59,7 @@ body {
 }
 
 .myNav {
-    margin: 50px auto!important;
+    margin: 20px 0px 50px 0px!important;
 }
 
 .navOption {
@@ -176,4 +176,44 @@ body {
     100% {
         transform: rotate(360deg);
     }
+}
+
+
+/* language switcher */
+
+.language {
+    position: relative;
+    margin: 10px auto;
+}
+
+.language>div {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.flag {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: aquamarine;
+    border: 1px solid grey;
+    margin: 0 2px;
+}
+
+.flag:hover {
+    cursor: pointer;
+}
+
+#flag-vn {
+    background-image: url(./assets/vn.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#flag-jp {
+    background-image: url(./assets/jp.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
