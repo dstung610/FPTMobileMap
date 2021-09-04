@@ -261,7 +261,9 @@
                     }
                     console.log(newData);
                     document.getElementById('brief').innerHTML = newData;
-                    document.getElementById('brief').scrollIntoView();
+                    document.getElementById('brief').scrollIntoView({
+                        behavior: "smooth"
+                    });
                     this.briefShow = true;
                 },
                 activateLevel2(country) {
@@ -321,7 +323,9 @@
                     }
                     console.log(newData);
                     document.getElementById('brief').innerHTML = newData;
-                    document.getElementById('brief').scrollIntoView();
+                    document.getElementById('brief').scrollIntoView({
+                        behavior: "smooth"
+                    });
                     this.briefShow = true;
                 },
                 setStateToLevel1() {
