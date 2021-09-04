@@ -221,8 +221,20 @@
                     this.setStateToLevel1();
                     if (this.activeNav === id) {
                         this.activeNav = 0;
+                        document.getElementById('backgroundMap').style.backgroundImage = "url(./assets/worldmapid.svg)";
                     } else {
                         this.activeNav = id;
+                        switch (id) {
+                            case 1:
+                                document.getElementById('backgroundMap').style.backgroundImage = "url(./assets/worldmap-america.svg)";
+                                break;
+                            case 2:
+                                document.getElementById('backgroundMap').style.backgroundImage = "url(./assets/worldmap-europe.svg)";
+                                break;
+                            case 3:
+                                document.getElementById('backgroundMap').style.backgroundImage = "url(./assets/worldmap-asia.svg)";
+                                break;
+                        }
                     }
                 },
                 clickCountry(country) {
@@ -288,9 +300,11 @@
                     switch (country) {
                         case "Vietnam":
                             this.isVietnam = true;
+                            this.changeBackgroundLevel2("Vietnam");
                             break;
                         case "Japan":
                             this.isJapan = true;
+                            this.changeBackgroundLevel2("Japan");
                             break;
                         default:
                             break;
@@ -320,6 +334,10 @@
                     this.isLoading = false;
                     stopCurrentVideo();
                     this.activateLevel2Content(this.countryCurrentVideo);
+                },
+                changeBackgroundLevel2(name) {
+                    console.log('map changed level 2');
+                    document.getElementById('backgroundMap').style.backgroundImage = "url(./assets/zoom-" + name + "-m.svg)";
                 },
                 openTour(city) {
                     linkToTour(this.tourSrc);
