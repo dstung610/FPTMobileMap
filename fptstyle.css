@@ -129,7 +129,7 @@ body {
 #player {
     position: absolute;
     left: 0px;
-    top: 20%;
+    top: 35%;
 }
 
 #backButton,
@@ -146,7 +146,7 @@ body {
 
 #skipVideoButton img,
 #backButton img {
-    width: 20px;
+    width: 40px;
 }
 
 .openTour {

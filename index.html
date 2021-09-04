@@ -261,7 +261,7 @@
                     }
                     console.log(newData);
                     document.getElementById('brief').innerHTML = newData;
-
+                    document.getElementById('brief').scrollIntoView();
                     this.briefShow = true;
                 },
                 activateLevel2(country) {
@@ -321,7 +321,7 @@
                     }
                     console.log(newData);
                     document.getElementById('brief').innerHTML = newData;
-
+                    document.getElementById('brief').scrollIntoView();
                     this.briefShow = true;
                 },
                 setStateToLevel1() {
@@ -352,6 +352,10 @@
             }
         }).mount("#mount")
 
+        // DN EN
+        // 892d9d31-3f67-5474-677d-0cf3aba33262-vod-e060b3d5-07e2-4cac-6bc8-f4d3fee74d53
+        // DN JP 
+        // 892d9d31-3f67-5474-677d-0cf3aba33262-vod-fdbc2bdf-3705-3dd6-5150-6e3223425f1b
 
         function tooltipDismiss() {
             document.getElementById('dismissBrief').click();
@@ -371,10 +375,11 @@
 
         function initVideo(CONTENT_ID) {
             currentVidId = CONTENT_ID;
+            var scrWid = window.screen.width;
             if (CONTENT_ID === "") return;
             vidPlayer = dacast(CONTENT_ID, 'player', {
-                width: window.screen.width,
-                height: window.screen.height / 2
+                width: scrWid,
+                height: scrWid / 4 * 3
             });
         };
 
