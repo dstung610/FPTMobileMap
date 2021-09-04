@@ -8,8 +8,18 @@
     src: url(./assets/GoogleSans-Bold.ttf);
 }
 
+@font-face {
+    font-family: Meiryo;
+    src: url(./assets/meiryo.ttc);
+}
+
+@font-face {
+    font-family: MeiryoB;
+    src: url(./assets/meiryob.ttc);
+}
+
 body {
-    font-family: GoogleSans, sans-serif !important;
+    font-family: Meiryo, GoogleSans, sans-serif !important;
 }
 
 #backgroundMap {
