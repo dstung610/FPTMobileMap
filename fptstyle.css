@@ -165,7 +165,7 @@ body {
     width: 50px;
     height: 50px;
     animation: spin 2s linear infinite;
-    left: 47%;
+    left: 42%;
     top: 45%;
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
@@ -180,6 +180,14 @@ body {
     100% {
         transform: rotate(360deg);
     }
+}
+
+#preload {
+    position: absolute;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
 }
 
 
@@ -208,8 +216,8 @@ body {
     cursor: pointer;
 }
 
-#flag-vn {
-    background-image: url(./assets/vn.svg);
+#flag-en {
+    background-image: url(./assets/gb.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

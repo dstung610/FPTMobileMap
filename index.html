@@ -10,8 +10,11 @@
     <meta name="image" property="og:image" content="./assets/thumb.jpg">
     <meta name="url" property="og:url" content="https://campus.fpt-software.com/world/">
 
+    <title>FPT MAP</title>
+
     <link rel="icon" type="image/png" href="./assets/favicon.jpg" />
     <link rel="stylesheet" href="./fptstyle.css" />
+
     <script type="text/javascript">
         if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             // Redirecion on mobile
@@ -27,6 +30,9 @@
 
 <body>
     <div class="container-fluid" id="mount">
+        <div id="preload">
+            <div class="loader"></div>
+        </div>
         <!-- Top logo -->
         <!-- <div class="row">
             <div class='col-2 offset-5'>
@@ -37,8 +43,8 @@
         <!-- Language Switch -->
         <div class="language">
             <div class="flexRow">
-                <div id="flag-vn" class='flag' title="Vietnamese" @click="hrefLink('/world/en')"></div>
-                <div id='flag-jp' class='flag' title="Japanese" @click="hrefLink('/world/jp')"></div>
+                <div id="flag-en" class='flag' title="English" @click="hrefLink('/worldm/en')"></div>
+                <div id='flag-jp' class='flag' title="Japanese" @click="hrefLink('/worldm/jp')"></div>
             </div>
         </div>
 
@@ -205,6 +211,10 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@3.2.4"></script>
     <script src="https://player.dacast.com/js/player.js?contentId=1552_f_297509"></script>
     <script>
+        window.onload = function() {
+            document.getElementById('preload').style.display = 'none';
+        }
+
         const vm = Vue.createApp({
             data() {
                 return {
