@@ -8,7 +8,7 @@
     <meta name="title" property="og:title" content="バーチャルキャンパスツアー">
     <meta name="description" property="og:description" content="あなたの家からベトナムのFPTキャンパスを探索することができます。 このインタラクティブな体験を通じて、キャンパスとその周辺をナビゲートします">
     <meta name="image" property="og:image" content="./assets/thumb-jp.jpg">
-    <meta name="url" property="og:url" content="https://campus.fpt-software.com/world/">
+    <meta name="url" property="og:url" content="https://campus.fpt-software.com">
 
     <title>FPT MAP</title>
 
@@ -202,9 +202,14 @@
         <div class="content row" id="brief" :class="{hide: !briefShow}"></div>
 
         <!-- Video player -->
-        <div id="player" :class="{hide: !isVideoShowing}"></div>
+        <div class="video-wrapper">
+            <span id="skipVideoButton" class="UI" :class="{hide: !isVideoShowing}" @click="dismissVideo()"><img src="./assets/crosshair.png"/></span>
+            <div id="player" :class="{hide: !isVideoShowing}">
+            </div>
+        </div>
+
         <span id="backButton" class="UI" :class="{hide: !isBackButtonShow}" @click="backToWorld()"><img src="./assets/crosshair.png"/></span>
-        <span id="skipVideoButton" class="UI" :class="{hide: !isVideoShowing}" @click="dismissVideo()"><img src="./assets/crosshair.png"/></span>
+
         <div class="loader" :class="{hide: !isLoading}"></div>
     </div>
 
@@ -416,7 +421,7 @@
             if (CONTENT_ID === "") return;
             vidPlayer = dacast(CONTENT_ID, 'player', {
                 width: scrWid,
-                height: scrWid / 4 * 3
+                height: scrWid / 16 * 9
             });
 
             vidPlayer.onError(function(err) {
