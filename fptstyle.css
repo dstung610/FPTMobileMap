@@ -126,6 +126,15 @@ body {
     width: 20px;
 }
 
+.video-wrapper {
+    position: absolute;
+    left: 0px;
+    top: 35%;
+    margin: 0;
+    padding: 0px;
+    width: 100vw;
+}
+
 #player {
     position: absolute;
     left: 0px;
@@ -136,7 +145,7 @@ body {
 #skipVideoButton {
     position: absolute;
     right: 10px;
-    top: 25vh;
+    top: 10px;
 }
 
 #skipVideoButton:hover,
