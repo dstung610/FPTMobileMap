@@ -340,7 +340,11 @@
                     console.log(city);
 
                     for (const [cityName, address] of Object.entries(tooltipData[country][city])) {
-                        newData += "<p>" + cityName + ":<br>" + address + "</p>";
+                        if (address === "") {
+                            newData += "<p>" + cityName + "</p>";
+                        } else {
+                            newData += "<p>" + cityName + ":<br>" + address + "</p>";
+                        }
                     }
                     console.log(newData);
                     document.getElementById('brief').innerHTML = newData;
@@ -453,7 +457,7 @@
                     "FPT Software": "17 Duy Tân, Cầu Giấy, Hà Nội",
                     "FPT Software": "FPT Tower, Lot D28, Cau Giay New Urban Area, Dich Vong Ward, Cau Giay District, Hanoi City, Vietnam<br>Tel: +84 24 7300 7300<br>Fax: +84 24 37687410",
                     "FPT Software Hanoi": "Làng công nghệ số 3 và số 4, Khu phần mềm, khu Công nghệ cao Hòa Lạc, Km 29 Đại Lộ Thăng Long, Xã Tân Xã, Huyện Thạch Thất, Hà Nội",
-                    "<div class='openAction' onClick='clickTour(`Hanoi`)'>Open Tour</div>": " "
+                    "<div class='openAction' onClick='clickTour(`Hanoi`)'>Open Tour</div>": ""
                 },
                 "Ho Chi Minh": {
                     "FPT Software Hochiminh": "Lô T2, đường D1, khu công nghệ cao, Phường Tân Phú, Quận 9, Thành phố Hồ Chí Minh"
