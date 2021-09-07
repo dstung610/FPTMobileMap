@@ -164,7 +164,7 @@
                         // 892d9d31-3f67-5474-677d-0cf3aba33262-vod-e060b3d5-07e2-4cac-6bc8-f4d3fee74d53
                         // DN JP 
                         // 892d9d31-3f67-5474-677d-0cf3aba33262-vod-fdbc2bdf-3705-3dd6-5150-6e3223425f1b -->
-                        <p class="country hide" id="danang" @click="openVideo('Vietnam', '892d9d31-3f67-5474-677d-0cf3aba33262-vod-e060b3d5-07e2-4cac-6bc8-f4d3fee74d53')">Da Nang</p>
+                        <p class="country hide" id="danang" @click="openVideo('Vietnam', '892d9d31-3f67-5474-677d-0cf3aba33262-vod-fdbc2bdf-3705-3dd6-5150-6e3223425f1b')">Da Nang</p>
                         <p class="country" @click="clickCity('Vietnam', 'Quy Nhon')">クイニョン</p>
                     </div>
                     <div class="flexColumn SubGroup col-6">
@@ -214,7 +214,8 @@
         <div class="loader hide" id="loaderTrigger" @click="loaderHide()"></div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.4"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@3.2.4"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.4/dist/vue.global.prod.js"></script>
     <script src="https://player.dacast.com/js/player.js?contentId=1552_f_297509"></script>
     <script>
         window.onload = function() {
@@ -435,7 +436,7 @@
             vidPlayer.onError(function(err) {
                 vidPlayer.stop();
                 vidPlayer.dispose();
-                alert('Oops! An error occured!');
+                // alert('Oops! An error occured!');
                 console.log("error type:", err.dc_type);
                 console.log("error msg:", err.dc_message);
                 document.getElementById('skipVideoButton').click();
