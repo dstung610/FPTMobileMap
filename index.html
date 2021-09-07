@@ -211,6 +211,7 @@
         <span id="backButton" class="UI" :class="{hide: !isBackButtonShow}" @click="backToWorld()"><img src="./assets/crosshair.png"/></span>
 
         <div class="loader" :class="{hide: !isLoading}"></div>
+        <div class="loader hide" id="loaderTrigger" @click="loaderHide()"></div>
     </div>
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/vue@3.2.4"></script> -->
@@ -385,6 +386,9 @@
                 hrefLink(link) {
                     // window.open(link);
                     window.location = link;
+                },
+                loaderHide() {
+                    this.isLoading = false;
                 }
             },
             computed: {
@@ -429,12 +433,16 @@
 
             vidPlayer.onError(function(err) {
                 // alert('Oops! An error occured!');
-                // console.log("error type:", err.dc_type);
-                // console.log("error msg:", err.dc_message);
-                // vidPlayer.stop();
-                // vidPlayer.dispose();
-                // document.getElementById('skipVideoButton').click();
+                console.log("error type:", err.dc_type);
+                console.log("error msg:", err.dc_message);
+                vidPlayer.stop();
+                vidPlayer.dispose();
+                document.getElementById('skipVideoButton').click();
             });
+
+            vidPlayer.onReady(function() {
+                document.getElementById('loaderTrigger').click();
+            })
 
             vidPlayer.onComplete(function() {
                 console.log('Video Ended')
