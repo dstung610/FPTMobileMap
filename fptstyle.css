@@ -78,6 +78,17 @@ body {
     width: 100%;
 }
 
+#shortcut-button {
+    background-color: #FE7C40;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+    width: 80%;
+}
+
 .content {
     margin: 50px 0px 0px 0px !important;
     padding: 20px !important;

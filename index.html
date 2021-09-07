@@ -51,14 +51,14 @@
 
         <!-- Navbar  -->
         <div class="row myNav justify-content-center gx-1">
-            <div class="col-4 navOption color-blue text-center" @click="navClick(1)">
-                America <span class="arrow" :class="[activeNav !== 1 ? 'hide' : '']"><img src="./assets/arrow.png"/></span>
+            <div class="col-4 navOption color-blue text-center" @click="navClick(3)">
+                Asia <span class="arrow" :class="[activeNav !== 3 ? 'hide' : '']"><img src="./assets/arrow.png"/></span>
             </div>
             <div class="col-4 navOption color-blue text-center" @click="navClick(2)">
                 Europe <span class="arrow" :class="[activeNav !== 2 ? 'hide' : '']"><img src="./assets/arrow.png"/></span>
             </div>
-            <div class="col-4 navOption color-blue text-center" @click="navClick(3)">
-                Asia <span class="arrow" :class="[activeNav !== 3 ? 'hide' : '']"><img src="./assets/arrow.png"/></span>
+            <div class="col-4 navOption color-blue text-center" @click="navClick(1)">
+                America <span class="arrow" :class="[activeNav !== 1 ? 'hide' : '']"><img src="./assets/arrow.png"/></span>
             </div>
         </div>
 
@@ -82,6 +82,9 @@
                 <div>
                     <h2 class="color-orange">22 </h2>
                     <h3>Development Centers</h3>
+                </div>
+                <div id="shortcut-button" @click="openTour('Hanoi')">
+                    Hanoi - Headquarter
                 </div>
             </div>
         </div>
