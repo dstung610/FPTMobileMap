@@ -211,6 +211,7 @@
         <span id="backButton" class="UI" :class="{hide: !isBackButtonShow}" @click="backToWorld()"><img src="./assets/crosshair.png"/></span>
 
         <div class="loader" :class="{hide: !isLoading}"></div>
+        <div class="loader hide" id="loaderTrigger" @click="loaderHide()"></div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@3.2.4"></script>
@@ -231,7 +232,7 @@
                     isLevel2: false,
                     isVietnam: false,
                     isJapan: false,
-                    tourSrc: "https://campus.fpt-software.com/en/"
+                    tourSrc: "https://campus.fpt-software.com/jp/"
                 }
             },
             methods: {
@@ -298,8 +299,8 @@
                     var urlvideoid = ""
                     switch (country) {
                         case "Vietnam":
-                            // Clip Vietnam-EN
-                            urlvideoid = "892d9d31-3f67-5474-677d-0cf3aba33262-vod-eb433728-d63b-9782-9f48-12aedda1b4f1";
+                            // Clip Vietnam-JP
+                            urlvideoid = "892d9d31-3f67-5474-677d-0cf3aba33262-vod-f1c4f662-0fc4-8d50-a441-4fb785288bc8";
                             break;
                         case "Japan":
                             // Clip Japan-JP
@@ -342,7 +343,11 @@
                     console.log(city);
 
                     for (const [cityName, address] of Object.entries(tooltipData[country][city])) {
-                        newData += "<p>" + cityName + ":<br>" + address + "</p>";
+                        if (address === "") {
+                            newData += "<p>" + cityName + "</p>";
+                        } else {
+                            newData += "<p>" + cityName + ":<br>" + address + "</p>";
+                        }
                     }
                     console.log(newData);
                     document.getElementById('brief').innerHTML = newData;
@@ -382,6 +387,9 @@
                 hrefLink(link) {
                     // window.open(link);
                     window.location = link;
+                },
+                loaderHide() {
+                    this.isLoading = false;
                 }
             },
             computed: {
@@ -433,6 +441,10 @@
                 document.getElementById('skipVideoButton').click();
             });
 
+            vidPlayer.onReady(function() {
+                document.getElementById('loaderTrigger').click();
+            })
+
             vidPlayer.onComplete(function() {
                 console.log('Video Ended')
                 document.getElementById('skipVideoButton').click();
@@ -455,14 +467,14 @@
                     "FPT Software": "17 Duy Tân, Cầu Giấy, Hà Nội",
                     "FPT Software": "FPT Tower, Lot D28, Cau Giay New Urban Area, Dich Vong Ward, Cau Giay District, Hanoi City, Vietnam Tel: +84 24 7300 7300<br>Fax: +84 24 37687410",
                     "FPT Software Hanoi": "Làng công nghệ số 3 và số 4, Khu phần mềm, khu Công nghệ cao Hòa Lạc, Km 29 Đại Lộ Thăng Long, Xã Tân Xã, Huyện Thạch Thất, Hà Nội",
-                    "<div class='openAction' onClick='clickTour(`Hanoi`)'>Open Tour</div>": " "
+                    "<div class='openAction' onClick='clickTour(`Hanoi`)'>ツアーを開く</div>": ""
                 },
                 "ホーチミン市": {
                     "FPT Software Hochiminh": "Lô T2, đường D1, khu công nghệ cao, Phường Tân Phú, Quận 9, Thành phố Hồ Chí Minh"
                 },
                 "ダナン": {
                     "Công ty TNHH Dịch vụ xử lý số FPT FPT Digital Processing Service Company Limited": "Tòa nhà FPT, KCN Đà Nẵng, An Đồn, Phường An Hải Bắc, Quận Sơn Trà, Thành phố Đà Nẵng, Việt Nam FPT Building, Road No.1, Danang Industrial Zone An Don, An Hai Bac ward, Son Tra District, Da Nang City",
-                    "<div class='openAction' onClick='clickVideo(`Vietnam`, `Da Nang`)'>Open Video</div>": ""
+                    "<div class='openAction' onClick='clickVideo(`Vietnam`, `Da Nang`)'>ビデオを開く</div>": ""
                 },
                 "クイニョン": {
                     "Chi nhánh công ty TNHH Dịch vụ xử lý số FPT tại Quy Nhơn FPT Digital Processing Service Company Limited - Quy Nhon branch": "Lầu 8, Tòa nhà 47, số 8 đường Biên Cương, phường Ngô Mây, thành phố Quy Nhơn, tỉnh Bình Định, Việt Nam"
