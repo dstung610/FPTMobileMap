@@ -1,0 +1,183 @@
+{
+    "tooltip": {
+        "Vietnam": {
+            "Hanoi": {
+                "FPT Software": "17 Duy Tân, Cầu Giấy, Hà Nội",
+                "FPT Software": "FPT Tower, Lot D28, Cau Giay New Urban Area, Dich Vong Ward, Cau Giay District, Hanoi City, Vietnam Tel: +84 24 7300 7300<br>Fax: +84 24 37687410",
+                "FPT Software Hanoi": "Làng công nghệ số 3 và số 4, Khu phần mềm, khu Công nghệ cao Hòa Lạc, Km 29 Đại Lộ Thăng Long, Xã Tân Xã, Huyện Thạch Thất, Hà Nội"
+            },
+            "Ho Chi Minh": {
+                "FPT Software Hochiminh": "Lô T2, đường D1, khu công nghệ cao, Phường Tân Phú, Quận 9, Thành phố Hồ Chí Minh"
+            },
+            "Da Nang": {
+                "Công ty TNHH Dịch vụ xử lý số FPT FPT Digital Processing Service Company Limited": "Tòa nhà FPT, KCN Đà Nẵng, An Đồn, Phường An Hải Bắc, Quận Sơn Trà, Thành phố Đà Nẵng, Việt Nam FPT Building, Road No.1, Danang Industrial Zone An Don, An Hai Bac ward, Son Tra District, Da Nang City"
+            },
+            "Quy Nhon": {
+                "Chi nhánh công ty TNHH Dịch vụ xử lý số FPT tại Quy Nhơn FPT Digital Processing Service Company Limited - Quy Nhon branch": "Lầu 8, Tòa nhà 47, số 8 đường Biên Cương, phường Ngô Mây, thành phố Quy Nhơn, tỉnh Bình Định, Việt Nam"
+            },
+            "Can Tho": {
+                "Chi nhánh Công ty TNHH Phần mềm FPT Hồ Chí Minh tại Cần Thơ FPT SOFTWARE HOCHIMINH CO.,LTD-CAN THO BRANCH": "Số 600 đường Nguyễn Văn Cừ, Phường An Bình, Quận Ninh Kiều, Thành Phố Cần Thơ No. 600 Nguyen Van Cu Street, An Binh Ward, Ninh Kieu District, Can Tho City"
+            }
+        },
+        "Japan": {
+            "Email Support": {
+                "Support.Japan@fpt-software.com": ""
+            },
+            "Sapporo Branch": {
+                "Sapporo Tokeidai Bld 7F, Kita 1 Jou Nishi 2-1, Chuo-ku, Sapporo-shi, Hokkaido, 060-0001 Japan": "TEL: (+81)11-233-1266 <br>FAX: (+81)11-223-1267"
+            },
+            "Tokyo Head Quarter": {
+                "KDX Hamamatsucho Place Building 6F, Shibakoen 1-7-6, Minato-ku, Tokyo, 105-0011 Japan": "TEL: (+81)3-6634-6868<br>FAX: (+81)3-6634-6869"
+            },
+            "FPT Japanese School": {
+                "FPT Japanese Language School<br>4-3-5 Higashinippori, Arakawa-ku, Tokyo, 116-0014 Japan": "FPT Nippori Building <br>TEL: (+81)3-5615-1012 <br>FAX: (+81)3-5615-1013"
+            },
+            "Yokohama Branch": {
+                "Pacific Marks Yokohama East Building 6F, Sakaecho 3-4, Kanagawa-ku, Yokohama, Kanagawa, 221-0052 Japan": "TEL: (+81)45-440-3738 <br>FAX: (+81)45-440-3739"
+            },
+            "Nagoya Branch": {
+                "TOMITA Bld 7F, Ushijimacho 2-5, Nishi-ku, Nagoya-shi, Aichi, 451-0046 Japan": "TEL: (+81)52-756-3456 <br>FAX: (+81)52-756-3458"
+            },
+            "Kariya Development Center": {
+                "THE TERRACE Bld 4F, Aio-cho 1-28, Kariya-shi, Aichi, 448-0027 Japan": "TEL: (+81)566-63-6028 <br>FAX: (+81)566-63-6029"
+            },
+            "Osaka Branch": {
+                "Shin Fujita Bld 16F, Dojima 2-4-27, Kita-ku, Osaka-shi, Osaka, 530-0003 Japan": "TEL: (+81)6-6344-9010 <br>FAX: (+81)6-6344-9020"
+            },
+            "Hiroshima Branch": {
+                "Sankyo Hiroshima Bld 7F, Komachi 3-25, Naka-ku, Hiroshima, 730-0041 Japan": "TEL: (+81)82-545-9806 <br>FAX: (+81)82-545-9808"
+            },
+            "Fukuoka Branch": {
+                "Hanamura Bld 8F, Hakataekihigashi 1-12-6, Hakata-ku, Fukuoka-shi, Fukuoka, 812-0013 Japan": "TEL: (+81)92-452-9911 <br>FAX: (+81)92-452-9912"
+            },
+            "FPT Okinawa Development Center": {
+                "JEI Naha Bld 6F, Kumoji 2-8-1, Naha-shi, Okinawa, 900-0015 Japan": "TEL: (+81)98-861-7311 <br>FAX: (+81)98-861-7313"
+            }
+        },
+        "Australia": {
+            "Sydney": "Office Level 13, 2 Park Street, Sydney NSW 2000, Australia <br>Contact: <br>Phone: +61 2 9004 7160 <br>Phone: +61 2 9004 7070 <br>Contact person: Ms. Ha Trinh <br>Email: Support.Australia@fpt-software.com",
+            "Melbourne": "Melbourne Office Level 27, Rialto South Tower, 525 Collins Street, Melbourne, Victoria, 3000, Australia",
+            "Perth": "Perth Office Level 32, 152 St. Georges Terrace, Perth WA 6000, Australia"
+        },
+        "China": {
+            "Shanghai": "Room 1615,16th Floor, Building 1, Global Creative Center, Lane 166, Minhong Road, Shanghai, P.R., China<br>Tel: +86 (21) 5416 2767 <br>Contact: Ms. Lily Tran Thi Hue <br>Email: Support.China@fpt-software.com"
+        },
+        "Czech Republic": {
+            "Strašnice": "Fpt Czech S.R.O. Limuzská 3135/12, 108 00 Strašnice, Czech Republic <br>Contact Person: Mr. Antonin Pavelka <br>Email: fsvk.contact@fpt.sk"
+        },
+        "France": {
+            "Paris": "FPT Software Europe SARL Paris office: 8 Terrasse Bellini, 92800 Puteaux, France <br>Tel: +33 018 0874 812 <br>Contact Person: <br>Mr. Modolo Jérome - Chief Executive Officer Email: Support.France @fpt-software.com",
+            "Toulouse": "Toulouse office: Aeropole, Bat 1, 5 Avenue Albert Durand, 31700 Blagnac, France <br>Tel: +33 056 150 0437 <br>Contact Person: <br>Mr. Modolo Jérome - Chief Executive Officer Email: Support.France @fpt-software.com"
+        },
+        "Germany": {
+            "Essen": "6th Floor, Am Thyssenhaus 1-3 (Haus3), 45128 Essen, Germany <br>Tel: +49 201 49039350 <br>Fax: +49 201 8675296 <br>Contact Person: Mr. Le Hai - Chief Executive Officer <br>Email: Support.Germany@fpt-software.com"
+        },
+        "Hongkong": {
+            "Hongkong": "FPT Consulting Service Limited. Room 1318-20, Hollywood Plaza, 610 Nathan Road, Mongkok, Kowloon, Hong Kong <br>Contact person: Mr. Nguyen Hoang Trung  - Director <br>Email: TrungNH@fsoft.com.vn Support.China@fpt-software.com"
+        },
+        "India": {
+            "Hyderabad": "FPT India Private Limited Address: 1st floor ASR CREST, Plot No.42&43, Image Garden Road, Madhapur, Hyderabad - 500081, India <br>Tel.: (091) 916-047-7345 <br>Contact person: Phung Sy Bay - Director <br>Email: support@fpt-software.com"
+        },
+        "Indonesia": {
+            "Jakarta": "Sovereign Plaza 6th Floor Jl. TB Simatupang Kav. 36, Jakarta 12430 <br>Tel.:(021)2940-0239 <br>Fax: (021) 2940-0238 <br>Tel.: (021) 2940-0239 Fax: (021) 2940-0238 Contact person: <br>Mr. Quach Hai Son Managing Director <br>Email: support@fpt-software.com"
+        },
+        "Malaysia": {
+            "Kuala Lumpur": "Lot 19 – 01, Level 19 Menara Hapseng 2, 02, Jalan P. Ramlee, 50250 Kuala Lumpur, Malaysia. <br>Tel.: +603 – 2022 0333<br>Fax: +603 – 2022 0303 Contact Persons: Mr. Tran Hong Chung Managing Director Email: Support.Malaysia@fpt-software.com"
+        },
+        "Myanmar": {
+            "Yangon": "E02-03, 2nd floor, Tower 5, Diamond Tower, Pyay Road, Kamayut Township, Yangon, Myanmar <br>Tel.: (+95) 9685 1111 32 <br>Contact Persons: Mr. Dinh Ngoc Hoang - Director",
+            "Yangon": "603, 605, 16 Building, MICT Park, Hlaing University, Hlaing Township, Yangon Tel: +95 1 9339 230"
+        },
+        "Philippines": {
+            "Cebu City": "G/F eBloc Tower 3, Geonzon St., Cebu IT Park, Apas, Cebu City, 6000 <br>Mr. Ralf Jay D. Mosqueda - Managing Director <br>Tel: +63 32 410 6957/ +63 32 410 6858 <br>Support.USA@fpt-software.com",
+            "Cebu City": "9th floor, HM Tower, Geonzon Street, IT Park, Cebu City 6000",
+            "Manila": "Suite A, Level 14, Robinsons Summit Center, 6783 Ayala Avenue, Makati City 1226 <br>Tel: +63 32 410 6857 (58)"
+        },
+        "Singapore": {
+            "Singapore": "8 Kallang Avenue, 12-09 Aperia Tower 1, Singapore 339509 <br>Tel: +65 6338 4353 <br>Fax: +65 6338 1987 <br>Contact person: Mr. David Nguyen Managing Director <br>Email: Support.Singapore@fpt-software.com"
+        },
+        "Slovakia": {
+            "Slovakia": "FPT Slovakia S.R.O Južná trieda 6, Košice 040 01, Slovakia <br>Tel: +42 155 610 1600 <br>Fax: +42 155 610 4005 <br>Contact person: Tran Coi - Director <br>Email: fsvk.contact@fpt.sk"
+        },
+        "South Korea": {
+            "Seoul": "Siencestar R.1001, 42 Magokjungang6ro, Gangseo-gu, Seoul, Korea <br>Tel.: +82 2 567 6650 <br>Fax: +82 2 3663 6650 <br>Contact person:  Mr. Nguyen Quoc Hung Chief Executive Officer <br>Email: support.korea@fpt-software.com"
+        },
+        "Taiwan": {
+            "Taipei": "FPT Taiwan Co., Ltd 9F-4,No.149-49 Keelung Road, Sec.2, Xinyi District, Taipei, Taiwan 11054, R.O.C <br>Tel: +886 93 613 7693 <br>Mr. Ted Chiang General Manager <br>Email: Ted.Chiang@fsoft.com.vn"
+        },
+        "Thailand": {
+            "Bangkok": "35th Floor, Tower A, The Ninth Tower, 33/4, Rama 9 Road, Huaykwang District, Bangkok <br>Tel.: +66 91 827 9252 <br>Contact Persons: Mr. Nguyen Tri Thai Managing Director <br>Email: Support.Thai@fpt-software.com"
+        },
+        "Belgium": {
+            "Mechelen": "FPT Belgium Office Schaliënhoevedreef 20h 2800 Mechelen, Belgium <br>Contact point: Mr. Le Hai  Chief Executive Officer <br>Email: hailh@fsoft.com.vn"
+        },
+        "UAE": {
+            "UAE": "FPT UAE Office 1405, Fortune Tower, Jumeirah Lakes Towers, Dubai, UAE <br>Contact person: Mr. Harry Nguyen Thanh Tuan Managing Director <br>Tel: +971 (04) 5776725 | Mobile: +971 5450 33668 <br>Email: Support.Me@fpt-software.com"
+        },
+        "UK": {
+            "London": "London St Pauls, 16 St Martin’s Le Grand, St Paul’s, London, The United Kingdom FPT Software United Kingdom Ltd. <br>Contact Person: Mr. Mohan Naidu - Managing Director <br>Tel: 02045098064 <br>Email: Support.UK@fpt-software.com"
+        },
+        "USA": {
+            "Texas": "FPT USA Headquarters 801 East Campbell Rd., Suite 525, Richardson, Texas 75081, USA <br>Tel: +1 214 253 2662 <br>Fax: +1 214 253 2988 <br>Contact person: Mr. Dang Tran Phuong Chief Executive Officer <br>Email: Support.USA@fpt-software.com",
+            "Denver": "Denver Office 6 Inverness Court East, Suite 250, Englewood, CO 80112 <br>Tel: +1 303 708 1575 <br>Email: Support.USA@fpt-software.com",
+            "LA": "Los Angeles Office 801 Parkview Drive North, Ste#100, El Segundo, CA 90245, USA <br>Tel: +1 424 336 9888 <br>Email: Support.USA@fpt-software.com",
+            "Boston": "Boston Office 197 First Ave, Suite 200, Needham, MA 02494 <br>Tel: +1 860 677 4427<br>Email: Support.USA@fpt-software.com",
+            "Hartford": "Hartford Office 10 Stanford Drive, Farmington, CT 06032 <br>Tel: +1 860 677 4427<br>Email: Support.USA@fpt-software.com",
+            "Detroit": "Detroit Office 17197 N Laurel Park Dr #273, Livonia, MI 48152 <br>Email: Support.USA@fpt-software.com",
+            "Renton": "Renton Office 901 Powell Avenue SW, Suite 111, Renton, WA 98057 <br>Tel: + 1 650 931 7246 <br>Email: Support.USA@fpt-software.com",
+            "Atlanta": "Atlanta 2 Concourse Parkway, Suite 100, Atlanta, GA 30328 <br>Tel: +1 404 442 8000 <br>Email: Support.USA@fpt-software.com",
+            "Raleigh": "Raleigh Office 2530 Meridian Parkway, Durham, NC 27713 <br>Tel: +1 919 806 4237 <br>Email: Support.USA@fpt-software.com"
+        },
+        "Colombia": {
+            "Colombia": "Contact person: Mr. Dang Tran Phuong Chief Executive Officer <br>Email: Support.USA@fpt-software.com"
+        },
+        "Canada": {
+            "Boucherville": "FPT Canada Office 242 Rue de Bayeux, Boucherville, QC J4B 7T9, Canada <br>Tel: +1 514 566 5658 <br>Fax: +1 450 641 3325 <br>Contact person: Mr. Dang Tran Phuong Chief Executive Officer<br>Email: Support.Canada@fpt-software.com"
+        },
+        "Costa Rica": {
+            "San José": "Updating"
+        }
+    },
+    "translate": {
+        "UAE": "UAE",
+        "Australia": "Australia",
+        "China": "China",
+        "Hongkong": "Hongkong",
+        "India": "India",
+        "Indonesia": "Indonesia",
+        "Malaysia": "Malaysia",
+        "Myanmar": "Myanmar",
+        "Philippines": "Philippines",
+        "Singapore": "Singapore",
+        "South Korea": "South Korea",
+        "Taiwan": "Taiwan",
+        "Thailand": "Thailand",
+        "USA": "USA",
+        "Canada": "Canada",
+        "Colombia": "Colombia",
+        "Germany": "Germany",
+        "France": "France",
+        "Slovakia": "Slovakia",
+        "Czech Republic": "Czech Republic",
+        "UK": "UK",
+        "Belgium": "Belgium",
+        "Costa Rica": "Costa Rica",
+        "Japan": "Japan",
+        "Sapporo Branch": "Sapporo Branch",
+        "Tokyo Head Quarter": "Tokyo Head Quarter",
+        "FPT Japanese School": "FPT Japanese School",
+        "Yokohama Branch": "Yokohama Branch",
+        "Nagoya Branch": "Nagoya Branch",
+        "Kariya Development Center": "Kariya Development Center",
+        "Osaka Branch": "Osaka Branch",
+        "Hiroshima Branch": "Hiroshima Branch",
+        "Fukuoka Branch": "Fukuoka Branch",
+        "FPT Okinawa Development Center": "FPT Okinawa Development Center",
+        "Vietnam": "Vietnam",
+        "Hanoi": "Hanoi",
+        "Da Nang": "Da Nang",
+        "Quy Nhon": "Quy Nhon",
+        "Ho Chi Minh": "Ho Chi Minh",
+        "Can Tho": "Can Tho"
+    }
+}
